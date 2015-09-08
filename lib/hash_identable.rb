@@ -8,12 +8,12 @@ require "hash_identable/locator"
 
 module HashIdentable
 
-  def identity
-    @identity ||= Identity.new(self.class, id)
+  def _hashidentible_identity
+    @_hashidentible_identity ||= Identity.new(self.class, id)
   end
 
-  def uuid
-    identity.encoded_id
+  def encoded_id
+    _hashidentible_identity.encoded_id
   end
 
 end
