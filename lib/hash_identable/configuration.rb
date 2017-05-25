@@ -18,7 +18,7 @@ module HashIdentable
       klass.class_eval do
         include(HashIdentable)
       end
-      lookup_table.store(id, klass.to_s)
+      lookup_table.store(id, klass.to_s) unless lookup_table[id] == klass.to_s.underscore
     end
 
     def salt
